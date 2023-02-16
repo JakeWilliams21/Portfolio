@@ -7,13 +7,13 @@ const About = () => {
         document.addEventListener('scroll', () => {
             const position = window.scrollY
             const opacity = position * .0015
-            console.log(opacity);
+            console.log(position);
 
             document.getElementById('App').style.backgroundColor = `rgba(24, 24, 24, ${opacity.toString()})`
             if (position === 0) {
                 document.getElementById('navbar').style.backdropFilter = 'none'
             } else {
-                document.getElementById('navbar').style.backdropFilter = 'blur(2px)'
+                document.getElementById('navbar').style.backdropFilter = 'blur(3px)'
             }
             
         })

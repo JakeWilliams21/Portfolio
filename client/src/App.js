@@ -6,6 +6,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import Projects from './components/Projects';
 
 function App() {
   const [data, setData] = useState({})
@@ -20,12 +21,17 @@ function App() {
     setData(res.data)
   })
 
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
+
   return (
     <div id = 'App' className="App">
         <Navbar/>
         <Home/>
         <About/>
-      
+        <Projects/>
+        <Footer/>
     </div>
   );
 }

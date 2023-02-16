@@ -3,7 +3,15 @@ import Preview from './Preview'
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div className = 'projects'>
+      <span className = 'title'>My Work</span>
+      <hr/>
+      <div className = 'works'>
+        <Preview/>
+        <Preview />
+        <Preview />
+      </div>
+    </div>
   )
 }
 
