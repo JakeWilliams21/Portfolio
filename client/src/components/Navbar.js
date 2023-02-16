@@ -2,8 +2,10 @@ import React from 'react'
 import '../App.css'
 
 const Navbar = () => {
+
+
   return (
-    <div className = 'navbar-div'>
+    <div id = 'navbar' className = 'navbar-div'>
         <div className = 'navbar-left'>
             <h2>Jake Williams</h2>
         </div>

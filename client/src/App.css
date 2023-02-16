@@ -10,6 +10,8 @@
   align-items: center;
   color: #f0f0e7;
   padding: 12px 96px 12px 48px;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-left {
@@ -105,3 +107,11 @@
   font-size: 128px;
   color: #f0f0e7;
 }
+
+/* About */
+
+#about {
+  height: 50vh;
+  width: 100%;
+}
+
