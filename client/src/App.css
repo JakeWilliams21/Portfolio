@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   color: #f0f0e7;
-  padding: 12px 96px 12px 48px;
+  padding: 0 96px 0 48px;
   position: sticky;
   top: 0;
 }
@@ -55,6 +55,7 @@
   height: 70vh;
   color: #f0f0e7;
   display: flex;
+  padding-bottom: 20vh;
 }
 
 .home-page-top {
@@ -111,7 +112,28 @@
 /* About */
 
 #about {
-  height: 50vh;
+  height: 100vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 96px
+}
+
+.about-left {
+
+}
+
+.about img {
+  height: 400px;
+  box-shadow: 5px 7px 5px 0px rgba(0,0,0,0.55);
+}
+
+.about-right {
+  width: 30%;
+  color:#f0f0e7;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
