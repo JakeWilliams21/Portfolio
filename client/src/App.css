@@ -32,8 +32,18 @@
   font-size: large;
 }
 
+.navbar-right li:hover {
+  cursor: pointer;
+  color: #cecec2;
+  text-decoration: underline;
+}
+
 .navbar-left h2 {
   font-weight: 700;
+}
+
+.navbar-left h2:hover {
+  cursor: pointer;
 }
 
 /* Home Page */
@@ -62,10 +72,26 @@
 
 .home-page-right:hover {
   background-color: rgba(0,0,0,.25);
+  cursor: default;
 }
 
 .home-page-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 
+.home-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 128px;
+}
+
+.home-socials>*:hover {
+  color: #cecec2;
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 .github {

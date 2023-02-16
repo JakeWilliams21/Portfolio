@@ -4,13 +4,6 @@ import linkedin from '../images/linkedin.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const styles = {
-    largeIcon: {
-        width: 120,
-        height: 120,
-    }
-}
-
 const Home = () => {
   return (
     <div className = 'home-page'>
@@ -21,8 +14,8 @@ const Home = () => {
                     <span>Developer</span>
                 </div>
                 <div className = 'home-socials'>
-                    <GitHubIcon className = 'github' fontSize='inherit'/>
-                    <LinkedInIcon fontSize='inherit'/>
+                    <GitHubIcon fontSize = 'large'/>
+                    <LinkedInIcon fontSize = 'large'/>
                 </div>
             </div>
             <div className = 'home-page-right'>
