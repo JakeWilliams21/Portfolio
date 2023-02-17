@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div className = 'projects'>
       <span className = 'title'>My Work</span>
-      <hr/>
+      <hr id = 'projects-hr'/>
       <div className = 'works'>
         <Preview/>
         <Preview />

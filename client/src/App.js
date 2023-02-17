@@ -27,10 +27,12 @@ function App() {
 
   return (
     <div id = 'App' className="App">
+      <div id = 'content' className = 'content'>
         <Navbar/>
         <Home/>
         <About/>
         <Projects/>
+      </div>
         <Footer/>
     </div>
   );

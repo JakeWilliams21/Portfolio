@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import frame from '../images/frame.png'
+import $ from 'jquery'
 
 const About = () => {
 
@@ -8,12 +9,25 @@ const About = () => {
             const position = window.scrollY
             const opacity = position * .0015
             console.log(position);
+            document.documentElement.dataset.scroll = window.scrollY; 
+            document.getElementById('content').style.backgroundColor = `rgba(24, 24, 24, ${opacity.toString()})`
 
-            document.getElementById('App').style.backgroundColor = `rgba(24, 24, 24, ${opacity.toString()})`
             if (position === 0) {
                 document.getElementById('navbar').style.backdropFilter = 'none'
             } else {
                 document.getElementById('navbar').style.backdropFilter = 'blur(3px)'
+            }
+
+            if($(window).scrollTop() + $(window).height() > $(document).height() - 400) {
+                $('.footer').addClass('footer-fade')
+            }
+
+            if (position > 850) {
+                $('#projects-hr').addClass('hr-spread')
+            }
+
+            if(position > 200) {
+                $('#portrait').addClass('fade-in')
             }
             
         })
@@ -22,7 +36,7 @@ const About = () => {
   return (
     <div id = 'about' className = 'about'>
         <div className = 'about-left'>
-            <img src = {frame} alt = 'My Photo'/>
+            <img id = 'portrait' src = {frame} alt = 'My Photo'/>
         </div>
         <div className = 'about-right'>
             <span className = 'about-title'>Hi, I'm Jake.</span>
