@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Home = () => {
   return (
     <div className = 'home-page'>
-        <div className = 'home-page-top'>
+        <div className = 'home-page-top vertical'>
             <div className = 'home-page-left'>
                 <div className = 'home-title'>
                     <span>Full stack</span>
@@ -20,11 +20,9 @@ const Home = () => {
             </div>
             <div className = 'home-page-right'>
                 <div>
-                    <span>I am a recent college graduate with a passion for learning, namely learning to code! I can create a intuitive and responsive website tailored to your needs.</span>
+                    <span>I am a recent college graduate with a passion for learning, namely learning to code! I can create interactive and responsive websites tailored to your needs.</span>
                 </div>
             </div>
-        </div>
-        <div className = 'home-page-bottom'>
         </div>
     </div>
   )

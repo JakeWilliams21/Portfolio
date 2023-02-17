@@ -8,7 +8,6 @@ const About = () => {
         document.addEventListener('scroll', () => {
             const position = window.scrollY
             const opacity = position * .0015
-            console.log(position);
             document.documentElement.dataset.scroll = window.scrollY; 
             document.getElementById('content').style.backgroundColor = `rgba(24, 24, 24, ${opacity.toString()})`
 
@@ -22,7 +21,7 @@ const About = () => {
                 $('.footer').addClass('footer-fade')
             }
 
-            if (position > 850) {
+            if (position > 900) {
                 $('#projects-hr').addClass('hr-spread')
             }
 
@@ -34,7 +33,7 @@ const About = () => {
     })
 
   return (
-    <div id = 'about' className = 'about'>
+    <div id = 'about' className = 'about vertical'>
         <div className = 'about-left'>
             <img id = 'portrait' src = {frame} alt = 'My Photo'/>
         </div>

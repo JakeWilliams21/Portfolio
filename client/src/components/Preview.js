@@ -3,7 +3,7 @@ import website from '../images/website.jpg'
 
 const Preview = () => {
   return (
-    <div className = 'preview'>
+    <div className = 'preview vertical'>
       <div className = 'preview-photo'>
         <img src = {website} alt = 'project'/>
       </div>
