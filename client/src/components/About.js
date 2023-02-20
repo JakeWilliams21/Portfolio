@@ -11,6 +11,7 @@ const About = () => {
             document.documentElement.dataset.scroll = window.scrollY; 
             document.getElementById('content').style.backgroundColor = `rgba(24, 24, 24, ${opacity.toString()})`
 
+
             if (position === 0) {
                 document.getElementById('navbar').style.backdropFilter = 'none'
             } else {
@@ -26,6 +27,7 @@ const About = () => {
             }
 
             if(position > 200) {
+                $('#portrait').removeClass('pre-fade')
                 $('#portrait').addClass('fade-in')
             }
             
@@ -35,7 +37,7 @@ const About = () => {
   return (
     <div id = 'about' className = 'about vertical'>
         <div className = 'about-left'>
-            <img id = 'portrait' src = {frame} alt = 'My Photo'/>
+            <img id = 'portrait' className = 'pre-fade' src = {frame} alt = 'My Photo'/>
         </div>
         <div className = 'about-right'>
             <span className = 'about-title'>Hi, I'm Jake.</span>

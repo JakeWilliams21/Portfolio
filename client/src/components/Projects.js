@@ -3,7 +3,7 @@ import Preview from './Preview'
 
 const Projects = () => {
   return (
-    <div className = 'projects'>
+    <div id = 'projects'>
       <span className = 'title'>My Work</span>
       <hr id = 'projects-hr'/>
       <div className = 'works'>

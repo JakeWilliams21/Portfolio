@@ -32,6 +32,75 @@
 
 #menu-icon {
   display: none;
+  cursor: pointer;
+  padding: 0 2px;
+  transition: background-color 1s ease-out;
+}
+
+#menu-icon:hover {
+  background-color: rgba(0,0,0,.25);
+}
+
+#close-icon {
+  display: none;
+  cursor: pointer;
+  transition: background-color 1s ease-out;
+}
+
+#close-icon:hover {
+  background-color: rgba(0,0,0,.25);
+}
+
+#hamburger-menu {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
+  padding: 96px 48px 12px 0;
+  z-index: -1;
+  display: none;
+
+}
+
+.phase-in {
+  animation: 1s phase-in ease;
+}
+
+.phase-out {
+  animation: 1s phase-out ease;
+}
+
+@keyframes phase-in {
+  from {
+    opacity: 0
+  } 
+  
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes phase-out {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0
+  }
+}
+
+#hamburger-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  list-style: none;
+  font-family: 'Inria', serif;
+  gap: 24px;
+  font-weight: bold;
+  font-size: large;
 }
 
 
@@ -140,6 +209,7 @@
   color: #cecec2;
   cursor: pointer;
   transform: scale(1.2);
+  transition: transform .5s ease-out
 }
 
 .github {
@@ -175,6 +245,10 @@
   box-shadow: 5px 7px 5px 0px rgba(0,0,0,0.55);
 }
 
+.pre-fade {
+  opacity: 0;
+}
+
 .fade-in {
   opacity: 1;
   animation: 1.5s fade ease;
@@ -199,7 +273,7 @@
 
 /* Projects */
 
-.projects {
+#projects {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -229,7 +303,7 @@
   }
 }
 
-.projects .title {
+#projects .title {
   font-size: x-large;
 }
 
@@ -390,5 +464,11 @@
 
   .home-page-right {
     font-size: 24px;
+  }
+}
+
+@media(min-width: 901px) {
+  #menu-icon {
+    display: none;
   }
 }
