@@ -10,8 +10,6 @@ import { Close } from '@mui/icons-material';
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
 
-  var navbar = document.getElementById("navbar");
-
     useEffect(() => {
       let width = $(window).width()
       if (width > 900) {

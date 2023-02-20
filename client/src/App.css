@@ -4,10 +4,61 @@
   background-size: cover;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html:-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .content {
   display: flex;
   flex-direction: column;
   background-size: cover;
+}
+
+@keyframes slideInTopRight {
+  0% {
+    transform: translate(100%, -100%)
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes slideInTopLeft {
+  0% {
+    transform: translate(-100%, -100%)
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes slideInBottomLeft {
+  0% {
+    transform: translate(-100%, 100%)
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes slideInBottomRight {
+  0% {
+    transform: translate(100%, 100%)
+  }
+
+  100% {
+    transform: translate(0%);
+  }
 }
 
 .sticky {
@@ -33,11 +84,13 @@
 .navbar-left {
   font-family: 'Imbue', serif;
   font-size: x-large;
+  animation: 1s slideInTopLeft ease
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
+  animation: 1s slideInTopRight ease
 }
 
 #menu-icon {
@@ -168,6 +221,8 @@
   cursor: pointer;
 }
 
+
+
 .hidden {
   visibility: hidden;
 }
@@ -179,7 +234,6 @@
   color: #f0f0e7;
   display: flex;
   padding: 10vh 0 20vh 0;
-  z-index: -3;
 }
 
 .home-page-top {
@@ -196,6 +250,7 @@
   background-color: rgba(0,0,0,.1);
   padding: 16px;
   transition: background-color 1s;
+  animation: 1.5s slideInBottomRight ease
 }
 
 .home-page-right:hover {
@@ -208,6 +263,7 @@
   flex-direction: column;
   gap: 32px;
   padding-bottom: 32px;
+  animation: 1.5s slideInBottomLeft ease
 }
 
 .home-socials {
@@ -234,6 +290,7 @@
   font-family: 'Imbue', serif;
   font-size: 128px;
   color: #f0f0e7;
+  z-index: -2;
 }
 
 /* About */
@@ -428,6 +485,12 @@
   gap: 48px;
 }
 
+.footer hr {
+  width: 20%;
+  display: none;
+  margin-bottom: 32px;
+}
+
 .footer-contact {
   align-items: end;
 }
@@ -435,13 +498,15 @@
 .footer-contact span:hover {
   color: #cecec2;
   cursor: pointer;
-  text-decoration: underline;
+  transform: scale(1.1);
+  transition: transform .5s ease
 }
 
 .footer-socials span:hover {
   color: #cecec2;
   cursor: pointer;
-  text-decoration: underline;
+  transform: scale(1.1);
+  transition: transform .5s ease;
 }
 
 @media(max-width: 900px) {
@@ -461,6 +526,10 @@
     display: flex;
   }
 
+  .footer hr {
+    display: block;
+  }
+
   .vertical {
     display: flex;
     flex-direction: column;
@@ -468,6 +537,19 @@
 
   .hide {
     visibility: hidden;
+  }
+
+  #vertical-rule {
+    display: none;
+  }
+
+  .footer-right> div {
+    flex-direction: row;
+  }
+
+  .footer-left {
+    flex-direction: row;
+    gap: 12px;
   }
 
   .wide {
