@@ -10,6 +10,8 @@ import { Close } from '@mui/icons-material';
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
 
+  var navbar = document.getElementById("navbar");
+
     useEffect(() => {
       let width = $(window).width()
       if (width > 900) {
@@ -20,6 +22,16 @@ const Navbar = () => {
       } else if (!visible && width <= 900) {
         $('#menu-icon').css('display', 'flex')
       }
+
+      document.addEventListener('scroll', () => {
+          let position = window.scrollY
+
+          if (position > 0) {
+            document.getElementById('navbar-container').classList.add('sticky')
+        } else {
+            document.getElementById('navbar-container').classList.remove('sticky')
+        }
+        })
     })
 
     const clickHandler = () => {
@@ -46,7 +58,7 @@ const Navbar = () => {
     }
 
   return (
-    <div>
+    <div id = 'navbar-container'>
     <div id = 'navbar' className = 'navbar-div'>
         <div className = 'navbar-left'>
             <h2>Jake Williams</h2>
