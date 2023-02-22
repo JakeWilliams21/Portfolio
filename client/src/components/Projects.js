@@ -7,7 +7,7 @@ const Projects = () => {
       <span className = 'title'>My Work</span>
       <hr id = 'projects-hr'/>
       <div className = 'works'>
-        <Preview/>
+        <Preview />
         <Preview />
         <Preview />
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import website from '../images/website.jpg'
 
-const Preview = () => {
+const Preview = (props) => {
   return (
     <div className = 'preview vertical'>
       <div className = 'preview-photo'>
