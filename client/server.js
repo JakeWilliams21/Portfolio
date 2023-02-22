@@ -41,6 +41,16 @@ app.post('/api/projects', upload.single('image'), async (req, res) => {
     }
 })
 
+app.get('/api/projects', async (req, res) => {
+    try {
+        const projects = await Project.find();
+        res.status(200).json(projects)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message: 'Internal Server Error'})
+    }
+})
+
 app.get('/api/data', (req, res) => {
     res.json({message: 'Server Connected'})
 })

@@ -417,6 +417,7 @@ html {
 
 .preview-photo {
   min-width: 45%;
+  max-width: 45%;
   background-color: white;
   border: 12px solid #2b2b2b;
   display: flex;
@@ -581,7 +582,12 @@ html {
   .home-page-right {
     font-size: 24px;
   }
+
+  .preview-photo {
+    max-width: 60%;
+  }
 }
+
 
 @media(min-width: 901px) {
   #menu-icon {

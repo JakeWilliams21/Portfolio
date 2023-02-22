@@ -5,11 +5,11 @@ const Preview = (props) => {
   return (
     <div className = 'preview vertical'>
       <div className = 'preview-photo'>
-        <img src = {website} alt = 'project'/>
+        <img src = {props.image} alt = {props.title}/>
       </div>
       <div className = 'description'>
-        <span>Title</span>
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        <span>{props.title}</span>
+        <span>{props.description}</span>
       </div>
     </div>
   )

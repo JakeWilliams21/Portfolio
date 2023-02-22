@@ -9,18 +9,8 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 
 function App() {
-  const [data, setData] = useState({})
-
-  axios({
-    method: 'GET',
-    url: '/api/data',
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(res => {
-    setData(res.data)
-  })
-
+  
+  
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
   }, [])
