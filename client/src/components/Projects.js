@@ -9,6 +9,7 @@ const Projects = () => {
   useEffect(() => {
     axios.get('./api/projects').then((response) => {
       setProjects(response.data);
+      console.log(projects);
     })
   }, [])
 
@@ -22,7 +23,10 @@ const Projects = () => {
             <Preview
               title = {project.title}
               description = {project.description}
-              image = {`data:${project.image.contentType};base64,${Buffer.from(project.image.data).toString('base64')}`} />
+              image = {`data:${project.image.contentType};base64,${Buffer.from(project.image.data).toString('base64')}`} 
+              id = {project._id}
+              />
+              
           </li>
         ))}
       </div>

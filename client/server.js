@@ -51,6 +51,17 @@ app.get('/api/projects', async (req, res) => {
     }
 })
 
+app.get('/api/project/:id', async (req, res) => {
+    try {
+        console.log(req.params.id);
+        const project = await Project.find({_id: req.params.id})
+        res.status(200).json(project)
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({message: 'Internal Server Error'})
+    }
+})
+
 app.get('/api/data', (req, res) => {
     res.json({message: 'Server Connected'})
 })

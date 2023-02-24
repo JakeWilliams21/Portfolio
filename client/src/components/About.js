@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import frame from '../images/frame.png'
+import portrait from '../images/Portrait.png'
 import $ from 'jquery'
 
 const About = () => {
@@ -37,7 +38,7 @@ const About = () => {
   return (
     <div id = 'about' className = 'about vertical'>
         <div className = 'about-left'>
-            <img id = 'portrait' className = 'pre-fade' src = {frame} alt = 'My Photo'/>
+            <img id = 'portrait' className = 'pre-fade' src = {portrait} alt = 'My Photo'/>
         </div>
         <div className = 'about-right'>
             <span className = 'about-title'>Hi, I'm Jake.</span>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./stylesheets/CreateProject.css";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 const CreateProject = () => {
   const [title, setTitle] = useState("");
@@ -47,7 +48,9 @@ const CreateProject = () => {
   };
 
   return (
-    <div className="create-project-container">
+    <div>
+    <Navbar/>
+      <div className="create-project-container">
       <h2>Create Project</h2>
       <form onSubmit={handleSubmit}>
       <div className = 'form-inputs'>
@@ -89,6 +92,8 @@ const CreateProject = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
+    </div>
+    
   );
 };
 
