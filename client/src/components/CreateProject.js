@@ -54,43 +54,41 @@ const CreateProject = () => {
   };
 
   return (
-    <div>
+    <div id = 'create-project-page'>
     <Navbar/>
-      <div className="create-project-container">
-      <h2>Create Project</h2>
-      <form id = 'project-form'onSubmit={handleSubmit}>
-      <div className = 'form-inputs'>
+      <div className="create-project-container vertical">
+      <form id = 'project-form' onSubmit={handleSubmit}>
+      <span>Create Project</span>
+      <div className = 'form-inputs vertical'>
         <div>
-          <label htmlFor="title">Title</label>
             <input
               type="text"
               id="title"
+              placeholder = 'Title'
               value={title}
               onChange={handleTitleChange}
             />
 
-            <label htmlFor="description">Description</label>
             <textarea
               id="description"
               value={description}
+              placeholder = 'Put your description here...'
               onChange={handleDescriptionChange}
             ></textarea>
         </div>
           
           <div>
-            <label htmlFor="skills">Skills</label> 
             <input
               type="text"
               id="skills"
               value={skills.join(",")}
+              placeholder = 'Skill1, Skill2...'
               onChange={handleSkillsChange}
             />
 
-            <label htmlFor="image">Image</label>
             <input type="file" id="image" onChange={handleImageChange} />
 
-            <label htmlFor="url">URL</label>
-            <input type="text" id="url" value={url} onChange={handleUrlChange} />
+            <input placeholder = 'Project URL' type="text" id="url" value={url} onChange={handleUrlChange} />
           </div>
       </div>
       

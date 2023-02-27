@@ -1,11 +1,15 @@
+#create-project-page {
+  display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Imbue', serif;
+}
+
 .create-project-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 50px;
-    padding-bottom: 24px;
-    color: white;
-    background-color: rgba(24, 24, 24, .25);
+    height: 100%;
   }
 
   .create-project-container h2 {
@@ -14,12 +18,12 @@
   }
   
   #project-form {
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 64px;
-    width: 100%
+    gap: 32px;
   }
 
   .form-inputs {
@@ -31,7 +35,7 @@
   .form-inputs div {
     display: flex;
     flex-direction: column;
-
+    gap: 64px
   }
   
   label {
@@ -52,22 +56,28 @@
   textarea {
     height: 150px;
   }
-  
-  .project-submit {
-    margin-top: 20px;
-    background-color: #007bff;
-    color: #fff;
+
+  button {
+    width: 75%;
+    padding: 4px 0;
+    border: none;
+    background-color: rgba(43, 43, 43, .75);
+    color: white;
+    border-radius: 2px;
+}
+
+button:hover {
     cursor: pointer;
-    width: 10%
+    background-color: rgba(43, 43, 43, 1)
+}
+
+@media (max-width: 900px) {
+  .vertical {
+    flex-direction: column;
   }
-  
-  .project-submit:hover {
-    background-color: #0069d9;
+
+  #create-project-page {
+    gap: 128px;
   }
-  
-  @media (max-width: 768px) {
-    form {
-      width: 90%;
-    }
-  }
+}
   
