@@ -9,49 +9,24 @@ import CloseIcon from '@mui/icons-material/Close';
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
 
-    useEffect(() => {
-      let width = $(window).width()
-      if (width > 900) {
-        $('#hamburger-menu').css("display", "none")
-        $('#close-icon').css('display', 'none')
-        $('#menu-icon').css('display', 'none')
-        setVisible(false)
-      } else if (!visible && width <= 900) {
-        $('#menu-icon').css('display', 'flex')
+  
+  useEffect(() => {
+    function handleResize() {
+      if ($(window).width() >= 900) {
+        setVisible(false);
       }
+    }
 
-      document.addEventListener('scroll', () => {
-          let position = window.scrollY
+    $(window).on("resize", handleResize);
 
-          if (position > 0) {
-            document.getElementById('navbar-container').classList.add('sticky')
-        } else {
-            document.getElementById('navbar-container').classList.remove('sticky')
-        }
-        })
-    }, [visible])
+    return () => {
+      $(window).off("resize", handleResize);
+    };
+  }, []);
+  
 
     const clickHandler = () => {
-      const menu = $('#menu-icon')
-      const close = $('#close-icon')
-      const links = $('#hamburger-menu')
-
-      if (visible) {
-        links.addClass('phase-out')
-        links.removeClass('phase-in')
-        links.css("display", "none")
-        menu.css('display', 'flex')
-        close.css('display', 'none')
-        setVisible(false)
-      } else {
-        links.css("display", "flex")
-        links.addClass('phase-in')
-        links.removeClass('phase-out')
-        menu.css('display', 'none')
-        close.css('display', 'flex')
-        setVisible(true)
-      }
-      
+      setVisible(!visible)
     }
 
   return (
@@ -61,19 +36,28 @@ const Navbar = () => {
             <h2><a href = '/'>Jake Williams</a></h2>
         </div>
         <div className = 'navbar-right'>
-            <MenuIcon id = 'menu-icon' fontSize = 'large' onClick = {clickHandler}/>
+          {visible ? (
             <CloseIcon id = 'close-icon' fontSize = 'large' onClick = {clickHandler} />
+          ) : (
+            <div>
             <Links/>
-        </div>
-    </div>
-    <div id = 'hamburger-menu'>
+            <MenuIcon id = 'menu-icon' fontSize = 'large' onClick = {clickHandler}/>
+            </div>
+            
+          )}
+          {visible && (
+            <div id = 'hamburger-menu'>
               <ul>
                   <li>Portfolio</li>
                   <li>Resume</li>
                   <li>Blog</li>
                   <li>Contact</li>
               </ul>
+            </div>
+          )}  
+        </div>
     </div>
+    
     </div>
   )
 }
