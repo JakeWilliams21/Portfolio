@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./stylesheets/CreateProject.css";
 import axios from "axios";
 import Navbar from "./Navbar";
-const EDIT_PASSWORD = process.env.REACT_APP_EDIT_PASSWORD
+import Cookies from "js-cookie";
+import requireAuth from "./requireAuth";
 
 const CreateProject = () => {
   const [title, setTitle] = useState("");
@@ -10,6 +11,9 @@ const CreateProject = () => {
   const [skills, setSkills] = useState([]);
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const token = Cookies.get('jwt_token')
+
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -33,9 +37,6 @@ const CreateProject = () => {
   };
 
   const handleSubmit = (event) => {
-    const password = prompt('Enter the password')
-
-    if (password === EDIT_PASSWORD) {
       event.preventDefault()
       const formData = new FormData();
       formData.append("title", title);
@@ -49,9 +50,6 @@ const CreateProject = () => {
       })
       console.log({ title, description, skills, image, url });
       alert('Submitted!')
-    } else {
-      alert('WRONG')
-    }
     
   };
 
@@ -105,4 +103,4 @@ const CreateProject = () => {
   );
 };
 
-export default CreateProject;
+export default requireAuth(CreateProject);

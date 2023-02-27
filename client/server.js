@@ -70,8 +70,20 @@ passport.use(
     next()
   })
 
+  const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    if (token === null) return res.sendStatus(401)
+  
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403)
+      req.user = user
+      next()
+    })
+  }
 
-app.post('/api/projects', upload.single('image'), async (req, res) => {
+
+app.post('/api/projects', authenticateToken, upload.single('image'), async (req, res) => {
     try {
         const { title, description, skills, url } = req.body
         const iamgeBuffer = req.file.buffer;
@@ -119,7 +131,7 @@ app.get('/api/data', (req, res) => {
 })
 
 app.post('/api/user', (req, res, next) => {
-  const user = User.findOne({ username: req.body.username}, async (err, user) => {
+  User.findOne({ username: req.body.username}, async (err, user) => {
     if (err) {
       return next(err)
     }
@@ -130,7 +142,10 @@ app.post('/api/user', (req, res, next) => {
         }
         try {
           if (await bcrypt.compare(req.body.password, user.password)) {
-            res.json({message: 'Success'})
+            const currentUser = {username: user.username}
+
+            const accessToken = jwt.sign( currentUser, process.env.ACCESS_TOKEN_SECRET)
+            res.json({accessToken: accessToken})
           } else {
             res.json({message: 'Not Allowed'})
           }
@@ -140,6 +155,8 @@ app.post('/api/user', (req, res, next) => {
   })
   
 })
+
+
 
 app.listen(port, () => {
     console.log('Listening on PORT 5000');
