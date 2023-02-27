@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./stylesheets/CreateProject.css";
 import axios from "axios";
 import Navbar from "./Navbar";
+const EDIT_PASSWORD = process.env.REACT_APP_EDIT_PASSWORD
 
 const CreateProject = () => {
   const [title, setTitle] = useState("");
@@ -32,19 +33,26 @@ const CreateProject = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("skills", skills);
-    formData.append("image", image);
-    formData.append("url", url);
+    const password = prompt('Enter the password')
 
-    axios.post('/api/projects', formData).then((response) => {
-      console.log(response.data);
-    })
-    console.log({ title, description, skills, image, url });
-    alert('Submitted!')
+    if (password === EDIT_PASSWORD) {
+      event.preventDefault()
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("skills", skills);
+      formData.append("image", image);
+      formData.append("url", url);
+  
+      axios.post('/api/projects', formData).then((response) => {
+        console.log(response.data);
+      })
+      console.log({ title, description, skills, image, url });
+      alert('Submitted!')
+    } else {
+      alert('WRONG')
+    }
+    
   };
 
   return (
@@ -52,7 +60,7 @@ const CreateProject = () => {
     <Navbar/>
       <div className="create-project-container">
       <h2>Create Project</h2>
-      <form onSubmit={handleSubmit}>
+      <form id = 'project-form'onSubmit={handleSubmit}>
       <div className = 'form-inputs'>
         <div>
           <label htmlFor="title">Title</label>
@@ -89,7 +97,7 @@ const CreateProject = () => {
       </div>
       
 
-        <button type="submit">Submit</button>
+        <button className = 'project-submit' type="submit">Submit</button>
       </form>
     </div>
     </div>

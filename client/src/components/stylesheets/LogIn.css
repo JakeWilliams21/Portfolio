@@ -1,0 +1,49 @@
+#log-in-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Imbue', serif;
+}
+
+#log-in-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+form {
+    background-color: white;
+    padding: 24px 96px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+form span {
+    font-size: 64px;
+    text-align: center;
+}
+
+input {
+    border: none;
+    border-bottom: solid;
+    border-radius: 0px;
+}
+
+button {
+    width: 75%;
+    padding: 4px 0;
+    border: none;
+    background-color: rgba(43, 43, 43, .75);
+    color: white;
+    border-radius: 2px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(43, 43, 43, 1)
+}

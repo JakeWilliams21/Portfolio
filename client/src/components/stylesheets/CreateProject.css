@@ -13,7 +13,7 @@
     font-size: 48px;
   }
   
-  form {
+  #project-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +53,7 @@
     height: 150px;
   }
   
-  button[type="submit"] {
+  .project-submit {
     margin-top: 20px;
     background-color: #007bff;
     color: #fff;
@@ -61,7 +61,7 @@
     width: 10%
   }
   
-  button[type="submit"]:hover {
+  .project-submit:hover {
     background-color: #0069d9;
   }
   

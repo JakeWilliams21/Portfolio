@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Links from './Links';
 import $ from 'jquery'
 import CloseIcon from '@mui/icons-material/Close';
-import { Close } from '@mui/icons-material';
 
 
 const Navbar = () => {
@@ -30,7 +29,7 @@ const Navbar = () => {
             document.getElementById('navbar-container').classList.remove('sticky')
         }
         })
-    })
+    }, [visible])
 
     const clickHandler = () => {
       const menu = $('#menu-icon')

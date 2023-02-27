@@ -14,7 +14,6 @@ const ProjectView = () => {
     useEffect(() => {
         axios.get(`/api/project/${id}`).then((response) => {
           setProject(response.data[0]);
-          console.log(response.data);
         })
       }, [id])
 

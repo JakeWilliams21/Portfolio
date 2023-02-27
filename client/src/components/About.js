@@ -28,17 +28,17 @@ const About = () => {
             }
 
             if(position > 200) {
-                $('#portrait').removeClass('pre-fade')
-                $('#portrait').addClass('fade-in')
+                $('#about').removeClass('pre-fade')
+                $('#about').addClass('fade-in')
             }
             
         })
     })
 
   return (
-    <div id = 'about' className = 'about vertical'>
+    <div id = 'about' className = 'about vertical pre-fade'>
         <div className = 'about-left'>
-            <img id = 'portrait' className = 'pre-fade' src = {portrait} alt = 'My Photo'/>
+            <img id = 'portrait'  src = {portrait} alt = 'Jake'/>
         </div>
         <div className = 'about-right'>
             <span className = 'about-title'>Hi, I'm Jake.</span>

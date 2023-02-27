@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App'
 import CreateProject from './components/CreateProject';
+import LoginForm from './components/LogIn';
 import ProjectView from './components/ProjectView';
 
 const RouteSwitch = () => {
@@ -9,6 +10,7 @@ const RouteSwitch = () => {
         <BrowserRouter>
             <Routes>
                 <Route path = '/' element = {<App />}/>
+                <Route path = '/log-in' element = {<LoginForm/>}/>
                 <Route path = '/resume' element = {<App />}/>
                 <Route path = '/portfolio' element = {<App />}/>
                 <Route path = '/project/:id' element = {<ProjectView/>}/>
