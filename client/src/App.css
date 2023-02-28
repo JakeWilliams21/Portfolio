@@ -104,8 +104,9 @@ html {
   align-items: center;
   color: #f0f0e7;
   padding: 0 96px 0 48px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 85%
 }
 
 .navbar-left {
@@ -262,7 +263,7 @@ a {
   width: 100%;
   color: #f0f0e7;
   display: flex;
-  padding: 10vh 0 20vh 0;
+  padding: 25vh 0 20vh 0;
 }
 
 .home-page-top {
@@ -299,7 +300,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 128px;
-  animation: 3s social-fade ease-in;
+  animation: 3s slideInBottomRight
 }
 
 @keyframes social-fade {
@@ -414,6 +415,7 @@ a {
 
 #projects .title {
   font-size: x-large;
+  padding-top: 5vh
 }
 
 .works {
@@ -499,17 +501,21 @@ a {
   /* background-color: rgba(24, 24, 24, 1); */
 }
 
-.footer-fade {
-  animation: 1.5s fade-in ease;
+.footer-before {
+  background-color: rgba(24, 24, 24, 1);
 }
 
-@keyframes fade-in {
-  from {
+.footer-fade {
+  animation: 3s fade-in-footer
+}
+
+@keyframes fade-in-footer {
+  0% {
     background-color: rgba(24, 24, 24, 1);
   }
 
-  to {
-    background-color: rgba(24, 24, 24, 0);
+  100% {
+    background-color: transparent
   }
 }
 

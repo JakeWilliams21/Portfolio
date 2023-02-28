@@ -21,6 +21,7 @@ const About = () => {
 
             if($(window).scrollTop() + $(window).height() > $(document).height() - 400) {
                 $('.footer').addClass('footer-fade')
+                $('.footer').removeClass('footer-before')
             }
 
             if (position > 900) {

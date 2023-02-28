@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import Cookies from "js-cookie";
 import requireAuth from "./requireAuth";
+import Logout from "./Logout";
 
 const CreateProject = () => {
   const [title, setTitle] = useState("");
@@ -47,9 +48,10 @@ const CreateProject = () => {
   
       axios.post('/api/projects', formData).then((response) => {
         console.log(response.data);
+        alert(response.data)
       })
       console.log({ title, description, skills, image, url });
-      alert('Submitted!')
+      
     
   };
 
@@ -92,8 +94,11 @@ const CreateProject = () => {
           </div>
       </div>
       
-
-        <button className = 'project-submit' type="submit">Submit</button>
+        <div id = 'button-container'>
+          <button className = 'project-submit' type="submit">Submit</button>
+          <Logout/>
+        </div>
+        
       </form>
     </div>
     </div>

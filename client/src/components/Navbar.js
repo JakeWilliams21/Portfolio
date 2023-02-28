@@ -29,6 +29,26 @@ const Navbar = () => {
       setVisible(!visible)
     }
 
+  const scrollTo = (selector) => {
+    console.log('clicked');
+    $('html, body').animate(
+      {
+        scrollTop: $(selector).offset().top,
+      },
+      500
+    )
+  }
+
+  const hamScrollTo = (selector) => {
+    setVisible(!visible)
+    $('html, body').animate(
+      {
+        scrollTop: $(selector).offset().top,
+      },
+      500
+    )
+  }
+
   return (
     <div id = 'navbar-container'>
     <div id = 'navbar' className = 'navbar-div'>
@@ -40,7 +60,13 @@ const Navbar = () => {
             <CloseIcon id = 'close-icon' fontSize = 'large' onClick = {clickHandler} />
           ) : (
             <div>
-            <Links/>
+            <div>
+              <ul id = 'navbar-links'>
+                <li onClick = {() => scrollTo('#about')}>About</li>
+                <li onClick = {() => scrollTo('#projects')}>Portfolio</li>
+                <li onClick = {() => scrollTo('#footer')}>Contact</li>
+              </ul>
+            </div>
             <MenuIcon id = 'menu-icon' fontSize = 'large' onClick = {clickHandler}/>
             </div>
             
@@ -48,10 +74,9 @@ const Navbar = () => {
           {visible && (
             <div id = 'hamburger-menu'>
               <ul>
-                  <li>Portfolio</li>
-                  <li>Resume</li>
-                  <li>Blog</li>
-                  <li>Contact</li>
+                  <li onClick = {() => hamScrollTo('#portrait')}>About</li>
+                  <li onClick = {() => hamScrollTo('#projects')}>Portfolio</li>
+                  <li onClick = {() => hamScrollTo('#footer')}>Contact</li>
               </ul>
             </div>
           )}  

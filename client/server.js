@@ -135,7 +135,6 @@ app.post('/api/user', (req, res, next) => {
     if (err) {
       return next(err)
     }
-    console.log(user);
 
       if (user === null) {
           return res.status(400).json({message: 'Cannot find user'})
@@ -144,7 +143,7 @@ app.post('/api/user', (req, res, next) => {
           if (await bcrypt.compare(req.body.password, user.password)) {
             const currentUser = {username: user.username}
 
-            const accessToken = jwt.sign( currentUser, process.env.ACCESS_TOKEN_SECRET)
+            const accessToken = jwt.sign( currentUser, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' })
             res.json({accessToken: accessToken})
           } else {
             res.json({message: 'Not Allowed'})

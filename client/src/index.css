@@ -11,6 +11,7 @@ body {
   background-image: url('./images/Creación_de_Adán.jpg');
   background-size: cover;
   background-attachment: fixed;
+  caret-color: transparent;
 }
 
 code {
