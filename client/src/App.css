@@ -643,8 +643,52 @@ a {
 
 @media (max-width: 500px) {
   #portrait {
-    display: none;
+    transform: scale(.8)
   }
+
+  .home-page-right {
+    text-align: center;
+  }
+
+  #about {
+    padding: 0 10vw;
+  }
+
+  .about-right {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #projects {
+    padding: auto 5vw;
+  }
+
+  .preview-photo {
+    transform: scale(.8)
+  }
+
+  .preview-photo img {
+    transform: scale(.8)
+  }
+
+  .home-title {
+    font-size: 96px;
+  }
+
+  .preview ul {
+    transform: scale(.8);
+  }
+
+  .footer>* {
+    transform: scale(.8);
+  }
+
+  .footer {
+    padding-bottom: 24px;
+  }
+
+
 }
 
 @media (min-width: 900px) {
