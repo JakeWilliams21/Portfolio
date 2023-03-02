@@ -13,10 +13,7 @@ const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 const User = require('./models/User')
 const jwt = require('jsonwebtoken')
-const path = require('path')
 const port = process.env.PORT || 8080
-
-
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage})
@@ -37,8 +34,6 @@ app.use(express.urlencoded({ extended: false}))
 const cacheOptions = {
   maxAge: '7d'
 }
-
-app.use(express.static(path.join(__dirname + '/public')))
 
 
 
@@ -157,11 +152,6 @@ app.post('/api/user', async (req, res, next) => {
     console.error(error);
     res.status(500).send();
   }
-});
-
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
 
 
