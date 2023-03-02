@@ -11,7 +11,7 @@ const Projects = () => {
       setProjects(response.data);
       console.log(projects);
     })
-  }, [])
+  }, [projects])
 
   return (
     <div id = 'projects'>
