@@ -7,7 +7,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    axios.get('./api/projects').then((response) => {
+    axios.get('/api/projects').then((response) => {
       setProjects(response.data);
     })
   }, [])
@@ -16,7 +16,7 @@ const Projects = () => {
     <div id = 'projects'>
       <span className = 'title'>My Work</span>
       <hr id = 'projects-hr'/>
-      <div id = 'works' className = 'works'>
+      <ul id = 'works' className = 'works'>
         {projects.map((project) => (
           <li className = 'preview' key = {project._id}>
             <Preview
@@ -29,7 +29,7 @@ const Projects = () => {
               
           </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

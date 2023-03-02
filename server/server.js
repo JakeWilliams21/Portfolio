@@ -13,7 +13,9 @@ const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 const User = require('./models/User')
 const jwt = require('jsonwebtoken')
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
+
+
 
 const storage = multer.memoryStorage()
 const upload = multer({ storage})
@@ -30,6 +32,12 @@ app.use(session({ secret: 'cats', resave: false, saveUninitialized: true}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.urlencoded({ extended: false}))
+
+const cacheOptions = {
+  maxAge: '7d'
+}
+
+app.use(express.static('build', cacheOptions))
 
 
 
@@ -158,5 +166,5 @@ app.post('/api/user', (req, res, next) => {
 
 
 app.listen(port, () => {
-    console.log('Listening on PORT 5000');
+    console.log('Listening on PORT 8080');
 })

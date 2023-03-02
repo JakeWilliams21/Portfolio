@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import frame from '../images/frame.png'
-import portrait from '../images/Portrait.png'
+import portrait from '../images/Portrait.webp'
 import $ from 'jquery'
 
 const About = () => {

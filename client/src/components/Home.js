@@ -14,8 +14,8 @@ const Home = () => {
                     <span>Developer</span>
                 </div>
                 <div className = 'home-socials'>
-                    <a href = 'https://github.com/JakeWilliams21'><GitHubIcon fontSize = 'large'/></a>
-                    <a href = 'https://www.linkedin.com/in/jakewilliams530'><LinkedInIcon fontSize = 'large'/></a>
+                    <a aria-label = 'Github' href = 'https://github.com/JakeWilliams21'><GitHubIcon alt = 'Github'fontSize = 'large'/></a>
+                    <a aria-label = 'LinkedIn' href = 'https://www.linkedin.com/in/jakewilliams530'><LinkedInIcon alt = 'LinkedIn' fontSize = 'large'/></a>
                 </div>
             </div>
             <div className = 'home-page-right'>
