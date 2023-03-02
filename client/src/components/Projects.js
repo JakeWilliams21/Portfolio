@@ -9,7 +9,6 @@ const Projects = () => {
   useEffect(() => {
     axios.get('https://jake-williams-portfolio.herokuapp.com/api/projects').then((response) => {
       setProjects(response.data);
-      console.log(projects);
     })
   }, [])
 
