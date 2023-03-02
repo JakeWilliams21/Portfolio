@@ -16,6 +16,7 @@ function LoginForm() {
 
     axios.post('/api/user', {username: username, password: password}).then((response) => {
       const token = response.data.accessToken
+      console.log(response.data.accessToken);
       Cookies.set('jwt_token', token)
 
       navigate('/create-project')
