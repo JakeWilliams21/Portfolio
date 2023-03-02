@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Preview from './Preview'
+// import Preview from './Preview'
 import axios from 'axios'
-import { Buffer } from 'buffer'
+// import { Buffer } from 'buffer'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
@@ -9,6 +9,7 @@ const Projects = () => {
   useEffect(() => {
     axios.get('/api/projects').then((response) => {
       setProjects(response.data);
+      console.log(projects);
     })
   }, [])
 
