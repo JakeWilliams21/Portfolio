@@ -13,6 +13,7 @@ const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
 const User = require('./models/User')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 const port = process.env.PORT || 8080
 
 
@@ -37,7 +38,7 @@ const cacheOptions = {
   maxAge: '7d'
 }
 
-app.use(express.static('build', cacheOptions))
+app.use(express.static(path.join(__dirname + '/public')))
 
 
 
@@ -138,30 +139,30 @@ app.get('/api/data', (req, res) => {
     res.json({message: 'Server Connected'})
 })
 
-app.post('/api/user', (req, res, next) => {
-  User.findOne({ username: req.body.username}, async (err, user) => {
-    if (err) {
-      return next(err)
+app.post('/api/user', async (req, res, next) => {
+  try {
+    const user = await User.findOne({ username: req.body.username }).exec();
+    if (user === null) {
+      return res.status(400).json({ message: 'Cannot find user' });
     }
 
-      if (user === null) {
-          return res.status(400).json({message: 'Cannot find user'})
-        }
-        try {
-          if (await bcrypt.compare(req.body.password, user.password)) {
-            const currentUser = {username: user.username}
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      const currentUser = { username: user.username };
+      const accessToken = jwt.sign(currentUser, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
+      res.json({ accessToken: accessToken });
+    } else {
+      res.json({ message: 'Not Allowed' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send();
+  }
+});
 
-            const accessToken = jwt.sign( currentUser, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' })
-            res.json({accessToken: accessToken})
-          } else {
-            res.json({message: 'Not Allowed'})
-          }
-        } catch {
-          res.status(500).send()
-         }
-  })
-  
-})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 
 
