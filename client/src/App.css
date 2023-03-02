@@ -380,6 +380,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  font-size: 20px;
 }
 
 /* Projects */
