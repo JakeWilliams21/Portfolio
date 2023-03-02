@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import frame from '../images/frame.png'
+import React, { useEffect} from 'react'
 import portrait from '../images/Portrait.webp'
 import $ from 'jquery'
 

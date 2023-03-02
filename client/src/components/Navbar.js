@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css'
 import MenuIcon from '@mui/icons-material/Menu';
-import Links from './Links';
 import $ from 'jquery'
 import CloseIcon from '@mui/icons-material/Close';
 

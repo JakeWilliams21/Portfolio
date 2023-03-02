@@ -1,6 +1,4 @@
 import React from 'react'
-import github from '../images/github.png'
-import linkedin from '../images/linkedin.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 

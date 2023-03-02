@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import About from './components/About';
 import Footer from './components/Footer';
 import Home from './components/Home';
