@@ -17,7 +17,7 @@ const Projects = () => {
       <span className = 'title'>My Work</span>
       <hr id = 'projects-hr'/>
       <ul id = 'works' className = 'works'>
-        {projects.map((project) => (
+        {projects && projects.map((project) => (
           <li className = 'preview' key = {project._id}>
             <Preview
               title = {project.title}
