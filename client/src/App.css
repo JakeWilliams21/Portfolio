@@ -641,6 +641,12 @@ a {
   }
 }
 
+@media (max-width: 500px) {
+  #portrait {
+    display: none;
+  }
+}
+
 @media (min-width: 900px) {
   #menu-icon {
     display: none;
