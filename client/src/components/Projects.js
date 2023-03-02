@@ -16,7 +16,7 @@ const Projects = () => {
     <div id = 'projects'>
       <span className = 'title'>My Work</span>
       <hr id = 'projects-hr'/>
-      <ul id = 'works' className = 'works'>
+      {/* <ul id = 'works' className = 'works'>
         {projects && projects.map((project) => (
           <li className = 'preview' key = {project._id}>
             <Preview
@@ -29,7 +29,7 @@ const Projects = () => {
               
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }
