@@ -12,7 +12,7 @@ const ProjectView = () => {
     let { id } = useParams()
 
     useEffect(() => {
-        axios.get(`/api/project/${id}`).then((response) => {
+        axios.get(`https://jake-williams-portfolio.herokuapp.com/api/project/${id}`).then((response) => {
           setProject(response.data[0]);
         })
       }, [id])

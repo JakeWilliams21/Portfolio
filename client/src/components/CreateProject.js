@@ -46,7 +46,7 @@ const CreateProject = () => {
       formData.append("image", image);
       formData.append("url", url);
   
-      axios.post('/api/projects', formData).then((response) => {
+      axios.post('https://jake-williams-portfolio.herokuapp.com/api/projects', formData).then((response) => {
         console.log(response.data);
         alert(response.data)
       })
