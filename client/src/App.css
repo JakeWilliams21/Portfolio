@@ -580,6 +580,11 @@ a {
 }
 
 @media(max-width: 900px) {
+
+  .content {
+    text-align: center;
+  }
+
   #navbar-links li{
     display: none;
   }
