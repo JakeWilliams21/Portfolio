@@ -14,6 +14,13 @@ body {
   caret-color: transparent;
 }
 
+@media(max-width: 500px) {
+  body {
+    background-image: none;
+    background-color: rgba(24, 24, 24, 1);
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
