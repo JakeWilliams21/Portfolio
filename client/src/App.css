@@ -640,6 +640,10 @@ a {
   .navbar-right {
     padding-right: 24px;
   }
+
+  .preview ul {
+    transform: scale(.9);
+  }
 }
 
 @media (max-width: 500px) {
