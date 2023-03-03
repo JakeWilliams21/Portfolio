@@ -107,7 +107,7 @@ html {
   padding: 0 96px 0 48px;
   position: fixed;
   top: 0;
-  width: 85%
+  width: 90%
 }
 
 .navbar-left {
@@ -281,7 +281,7 @@ a {
   background-color: rgba(0,0,0,.1);
   padding: 16px;
   transition: background-color 1s;
-  animation: 2s slideInBottomRight ease
+  animation: 3s slideInBottomRight ease
 }
 
 .home-page-right:hover {
@@ -301,7 +301,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 128px;
-  animation: 3s slideInBottomRight
+  animation: 2.5s slideInBottomRight
 }
 
 @keyframes social-fade {
@@ -689,6 +689,9 @@ a {
     padding-bottom: 24px;
   }
 
+  .navbar-div {
+    width: 80%;
+  }
 
 }
 

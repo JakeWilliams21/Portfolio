@@ -12,11 +12,18 @@ body {
   background-size: cover;
   background-attachment: fixed;
   caret-color: transparent;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-image: url('./images/Creación_de_Adán_ipad.webp');
+  }
 }
 
 @media(max-width: 500px) {
   body {
-    background-image: none;
+    background-image: url('./images/Creación_de_Adán.webp');
     background-color: rgba(24, 24, 24, 1);
   }
 }
