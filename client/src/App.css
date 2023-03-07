@@ -659,8 +659,8 @@ a {
     text-align: center;
   }
 
-  .home-page-left {
-
+  .home-page-top {
+    gap: none;
   }
 
   .home-page {
