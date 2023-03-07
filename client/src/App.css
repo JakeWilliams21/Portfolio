@@ -679,15 +679,17 @@ a {
   }
 
   #projects {
-    padding: 5vh 5vw;
+    padding: 5vh;
+    width: 80%;
   }
 
   .preview-photo {
-    transform: scale(.8)
+    width: 50%;
+    height: 150px;
   }
 
   .preview-photo img {
-    transform: scale(.8)
+    transform: scale(.5)
   }
 
   .home-title {
@@ -695,7 +697,7 @@ a {
   }
 
   .preview ul {
-    transform: scale(.8);
+    font-size: x-small;
   }
 
   .footer>* {
