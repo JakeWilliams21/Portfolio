@@ -329,7 +329,7 @@ a {
   display: flex;
   flex-direction: column;
   font-family: 'Imbue', serif;
-  font-size: 128px;
+  font-size: 164px;
   color: #f0f0e7;
   z-index: -2;
   animation: 2s slideInBottomLeft ease
@@ -468,14 +468,12 @@ a {
 }
 
 .preview-photo img {
-  width: 375px;
-  height: 300px;
+  width: 500px;
   transition: transform 1s ease-out;
-  filter: sepia(.8) saturate(.5);
 }
 
 .preview-photo img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -643,6 +641,10 @@ a {
 
   .preview ul {
     transform: scale(.9);
+  }
+
+  .home-title {
+    font-size: 128px;
   }
 }
 
