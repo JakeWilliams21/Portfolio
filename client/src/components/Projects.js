@@ -25,6 +25,7 @@ const Projects = () => {
               image = {`data:${project.image.contentType};base64,${Buffer.from(project.image.data).toString('base64')}`} 
               id = {project._id}
               skills = {project.skills}
+              url = {project.url}
               />
               
           </li>
