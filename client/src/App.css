@@ -659,8 +659,16 @@ a {
     text-align: center;
   }
 
+  .home-page-left {
+
+  }
+
+  .home-page {
+    padding: 17vh 0 15vh 0;
+  }
+
   #about {
-    padding: 0 10vw;
+    padding: 0 10vw 5vh 10vw;
     gap: 16px;
   }
 
@@ -683,7 +691,7 @@ a {
   }
 
   .home-title {
-    font-size: 96px;
+    font-size: 82px;
   }
 
   .preview ul {
