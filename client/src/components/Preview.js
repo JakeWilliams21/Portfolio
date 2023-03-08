@@ -2,7 +2,7 @@ import React from 'react'
 
 const Preview = (props) => {
   return (
-    <div>
+    <div className = 'main hide'>
     <div className = 'preview vertical'>
           <div className = 'preview-photo'>
             <a href = {props.url} className = 'preview-link'><img src = {props.image} alt = {props.title}/></a> 

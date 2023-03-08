@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <div id = 'projects'>
-      <span className = 'title'>My Work</span>
+      <span className = 'title main hide'>My Work</span>
       <hr id = 'projects-hr'/>
       <ul id = 'works' className = 'works'>
         {projects && projects.map((project) => (

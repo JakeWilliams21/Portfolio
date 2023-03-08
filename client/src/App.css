@@ -167,6 +167,30 @@ a {
   animation: 1s phase-out ease;
 }
 
+.animate-class {
+  animation: phase-in-rise 2s
+}
+
+.show-element {
+  visibility: visible;
+}
+
+@keyframes phase-in-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(10%)
+  } 
+
+  25% {
+    opacity: 0;
+    transform: translateY(10%)
+  }
+  
+  100% {
+    opacity: 1
+  }
+}
+
 @keyframes phase-in {
   from {
     opacity: 0
@@ -681,6 +705,15 @@ a {
   #projects {
     padding: 5vh;
     width: 80%;
+  }
+
+  .preview-photo:hover {
+    transform: scale(.95);
+    cursor: pointer;
+  }
+  .preview-photo img:hover {
+    transform: scale(.6);
+    cursor: pointer;
   }
 
   .preview-photo {
