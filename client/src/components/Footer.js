@@ -18,7 +18,7 @@ const Footer = () => {
         <div className = 'footer-socials'>
           <span><a href = 'https://github.com/JakeWilliams21'>GitHub</a></span>
           <span><a href = 'https://dribbble.com/jakew21/'>Dribble</a></span>
-          <span><a href = 'https://pin.it/6KE4vj6'>Pintrest</a></span>
+          <span><a href = 'https://pin.it/6KE4vj6'>Pinterest</a></span>
         </div>
       </div>
     </div>
