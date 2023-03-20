@@ -10,6 +10,15 @@ const Preview = (props) => {
           <div className = 'description'>
             <span>{props.title}</span>
             <span>{props.description}</span>
+            <div className = 'skills'>
+              <div className = 'skill'>
+                <span><a href = {props.url}>Project</a></span>
+              </div>
+              <div className = 'skill'>
+                <span><a href = {props.github}>Github</a></span>
+              </div>
+            </div>
+           
           </div>
     </div>
     <ul>

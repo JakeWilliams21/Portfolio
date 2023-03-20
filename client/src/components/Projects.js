@@ -26,6 +26,7 @@ const Projects = () => {
               id = {project._id}
               skills = {project.skills}
               url = {project.url}
+              github = {project.githubUrl}
               />
               
           </li>

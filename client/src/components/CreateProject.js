@@ -12,6 +12,7 @@ const CreateProject = () => {
   const [skills, setSkills] = useState([]);
   const [image, setImage] = useState("");
   const [url, setUrl] = useState("");
+  const [githubUrl, setGithubUrl] = useState('')
   const token = Cookies.get('jwt_token')
 
   axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
@@ -37,6 +38,10 @@ const CreateProject = () => {
     setUrl(event.target.value);
   };
 
+  const handleGitUrlChange = (event) => {
+    setGithubUrl(event.target.value)
+  }
+
   const handleSubmit = (event) => {
       event.preventDefault()
       const formData = new FormData();
@@ -45,12 +50,13 @@ const CreateProject = () => {
       formData.append("skills", skills);
       formData.append("image", image);
       formData.append("url", url);
+
   
       axios.post('https://jake-williams-portfolio.herokuapp.com/api/projects', formData).then((response) => {
         console.log(response.data);
         alert(response.data)
       })
-      console.log({ title, description, skills, image, url });
+      console.log({ title, description, skills, image, url, githubUrl });
       
     
   };
@@ -91,6 +97,8 @@ const CreateProject = () => {
             <input type="file" id="image" onChange={handleImageChange} />
 
             <input placeholder = 'Project URL' type="text" id="url" value={url} onChange={handleUrlChange} />
+
+            <input placeholder = 'Github URL' type = 'text' id = 'githubUrl' value = {githubUrl} onChange={handleGitUrlChange}/>
           </div>
       </div>
       
