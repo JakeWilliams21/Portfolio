@@ -12,12 +12,11 @@ const Home = () => {
                     <span>Developer</span>
                 </div>
                 <div className = 'home-socials'>
-                    <a aria-label = 'Github' href = 'https://github.com/JakeWilliams21'><GitHubIcon alt = 'Github'fontSize = 'large'/></a>
-                    <a aria-label = 'LinkedIn' href = 'https://www.linkedin.com/in/jakewilliams530'><LinkedInIcon alt = 'LinkedIn' fontSize = 'large'/></a>
+                    <a aria-label = 'Github' href = 'https://github.com/JakeWilliams21'><GitHubIcon alt = 'Github'/></a>
+                    <a aria-label = 'LinkedIn' href = 'https://www.linkedin.com/in/jakewilliams530'><LinkedInIcon alt = 'LinkedIn'/></a>
                 </div>
-            </div>
-            <div className = 'home-page-right'>
-                <div>
+                <hr/>
+                <div className = 'home-description'>
                     <span>I am a recent college graduate with a passion for learning, namely learning to code! I can create interactive and responsive websites tailored to your needs.</span>
                 </div>
             </div>

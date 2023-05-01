@@ -112,8 +112,8 @@ html {
 }
 
 .navbar-left {
-  font-family: 'Imbue', serif;
   font-size: x-large;
+  padding: 12px 0;
   animation: 1s slideInTopLeft 
 }
 
@@ -217,7 +217,6 @@ a {
   align-items: flex-end;
   justify-content: center;
   list-style: none;
-  font-family: 'Inria', serif;
   gap: 24px;
   font-weight: bold;
   font-size: large;
@@ -230,8 +229,6 @@ a {
   align-items: center;
   justify-content: center;
   list-style: none;
-  font-family: 'Inria', serif;
-  font-weight: bold;
   gap: 48px;
   font-size: large;
 }
@@ -294,14 +291,13 @@ a {
 
 .home-page-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 15%;
   gap: 15%;
 }
 
 .home-page-right {
-  font-family: 'Inria', serif;
   font-size: 48px;
   background-color: rgba(0,0,0,.1);
   padding: 16px;
@@ -317,8 +313,43 @@ a {
 .home-page-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 32px;
-  padding-bottom: 32px;
+  padding: 128px 0 24px 0;
+  position: relative; /* Added for the pseudo-element */
+  max-width: 60%;
+}
+
+.home-page-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 2px solid white;
+  box-sizing: border-box;
+  animation: drawBorder 4s linear forwards;
+}
+
+.home-page-left hr {
+  width: 50%;
+  border-width: .5px;
+  animation: titleSpread 6s ease-out;
+}
+
+@keyframes titleSpread {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 0;
+  }
+
+  100% {
+    width: 50%;
+  }
 }
 
 .home-socials {
@@ -326,7 +357,8 @@ a {
   align-items: center;
   justify-content: center;
   gap: 128px;
-  animation: 2.5s slideInBottomRight
+  animation: 2.5s slideInBottomRight;
+  z-index: 999;
 }
 
 @keyframes social-fade {
@@ -353,14 +385,42 @@ a {
 .home-title {
   display: flex;
   flex-direction: column;
-  font-family: 'Imbue', serif;
-  font-size: 164px;
+  font-size: 3rem;
   color: #f0f0e7;
   z-index: -2;
   animation: 2s slideInBottomLeft ease
 }
 
-/* About */
+.home-description {
+  font-size: 1rem;
+  color: #f0f0e7;
+  z-index: -2;
+  animation: 2s slideInBottomLeft ease;
+  text-align: center;
+  max-width: 75%;
+  line-height: 200%;
+}
+
+@keyframes drawBorder {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  50% {
+    width: 0;
+    height: 0;
+  }
+
+  75% {
+    width: 100%;
+    height: 0;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}About */
 
 #about {
   height: 100vh;
@@ -552,7 +612,6 @@ a {
 
 .footer-left span {
   font-size: 96px;
-  font-family: 'Imbue', serif;
 }
 
 .footer-right {

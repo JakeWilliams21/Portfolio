@@ -52,7 +52,7 @@ const Navbar = () => {
     <div id = 'navbar-container'>
     <div id = 'navbar' className = 'navbar-div'>
         <div className = 'navbar-left'>
-            <h2><a href = '/'>Jake Williams</a></h2>
+            <span><a href = '/'>Jake Williams</a></span>
         </div>
         <div className = 'navbar-right'>
           {visible ? (

@@ -1,14 +1,9 @@
 body {
   margin: 0;
-  font-family: 'Gothic A1', sans-serif;
-  font-family: 'Imbue', serif;
-  font-family: 'Inria Serif', serif;
-  font-family: 'Libre Baskerville', serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Roboto Serif', serif;
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/Creación_de_Adán.jpg');
+  background-image: url('./images/mountains.webp');
   background-size: cover;
   background-attachment: fixed;
   caret-color: transparent;
