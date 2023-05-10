@@ -11,10 +11,10 @@ const Preview = (props) => {
             <span>{props.title}</span>
             <span>{props.description}</span>
             <div className = 'skills'>
-              <div className = 'skill'>
+              <div className = 'skill project-link'>
                 <span><a href = {props.url}>Project</a></span>
               </div>
-              <div className = 'skill'>
+              <div className = 'skill project-link'>
                 <span><a href = {props.github}>Github</a></span>
               </div>
             </div>
